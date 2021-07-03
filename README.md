@@ -1,19 +1,34 @@
 # start up
 
+## node version
+
+nodeのversionは固定している。
+package.jsonでyarnを固定および.npmrcでnpmでも固定。
+
+```bash
+$node -v
+v12.13.1
+```
+
 ```bash
 $cd react-firebase-seed
 $yarn start
 ```
-
 ## node version
 
 ・Cloud Function(サーバーレス)の関数実行環境を使用するために
-まだ最新12系に対応していないため10系で対応する　。
+・まだ最新12系に対応していないため10系で対応する。
 
 ```bash
 $nodenv install 12.13.1
 $nodenv install 10.17.0
 ```
+
+node.jsのライブラリ運用手順
+[URL](https://dev.classmethod.jp/articles/strategies-node-project/)
+
+node version固定
+[URL](https://qiita.com/suin/items/994458418c737cc9c3e8)
 
 ## 手順
 
