@@ -59,7 +59,6 @@ CRAでは開発環境サーバはホットリロードが有効になってい�
 こちらも参照
 [URL](https://zenn.dev/yhay81/articles/def73cf8a02864)
 
-
 ```bash
 $yarn add -D stylelint prettier
 
@@ -135,3 +134,68 @@ $yarn add -D husky@4 lint-staged
 ```bash
 $yarn add -D sort-package-json
 ```
+
+## firebase setup
+
+```bash
+$npm install -g firebase-tools
+
+$exec $SHELL -l
+
+$firebase login
+
+ブラウザ上で作成したfirebaseアプリを元に初期化をしていく。
+cloud Firestoreも作成しておくこと。
+asia-northeast1 東京
+asia-northeast2 大阪
+
+firebase initで選択したもの
+$firebase init
+ ◉ Firestore: Configure security rules and indexes files for Firestore
+ ◉ Functions: Configure a Cloud Functions directory and its files
+❯◉ Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
+
+? Please select an option:
+❯ Use an existing project 選択
+  Create a new project
+  Add Firebase to an existing Google Cloud Platform project
+  Don't set up a default project
+
+
+```
+
+## firebase build
+
+```bash
+$yarn build
+
+$firebase deploy --only hosting
+```
+
+## firebase Hostingへのデプロイ
+
+デプロイは今すぐ行うことも、後で行うこともできます。今すぐデプロイするには、ターミナル ウィンドウを開き、ウェブアプリのルート ディレクトリに移動するか、ルート ディレクトリを作成します。
+
+Google へのログイン
+
+```bash
+$firebase login
+```
+
+プロジェクトの開始
+このコマンドはアプリのルート ディレクトリから実行してください:
+
+```bash
+$firebase init
+```
+
+準備ができたらウェブアプリをデプロイ
+静的ファイル（HTML、CSS、JS など）をアプリのデプロイ ディレクトリ（デフォルトは「public」）に配置します。続いて、アプリのルート ディレクトリで次のコマンドを実行します:
+
+```bash
+$firebase deploy
+```
+
+デプロイ後、アプリを magazin-app-demo.web.app で表示します。
+
+
