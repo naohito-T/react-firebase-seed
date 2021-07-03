@@ -13,29 +13,26 @@ if (isJsxFile) {
     processors: ['stylelint-processor-styled-components'],
     rules: {
       'declaration-empty-line-before': 'never',
-      'indentation': 2,
+      indentation: 2,
       'no-missing-end-of-source-newline': null,
       'string-quotes': 'single',
-      'order/properties-alphabetical-order': true
-    }
+      'order/properties-alphabetical-order': true,
+    },
   };
 }
 
 module.exports = {
   extends: [
-		'stylelint-config-standard',
-		'./node_modules/prettier-stylelint/config.js'
-	],
-  ignoreFiles: [
-    '**/node_modules/**',
-    'src/styles/**'
+    'stylelint-config-standard',
+    './node_modules/prettier-stylelint/config.js',
   ],
+  ignoreFiles: ['**/node_modules/**', 'src/styles/**'],
   plugins: ['stylelint-order'],
   rules: {
     'declaration-empty-line-before': 'never',
-    'indentation': 2,
+    indentation: 2,
     'no-missing-end-of-source-newline': null,
     'string-quotes': 'single',
-    'order/properties-alphabetical-order': true
+    'order/properties-alphabetical-order': true,
   },
 };

@@ -50,7 +50,7 @@ module.exports = {
   rules: {
     // eslint official
     'linebreak-style': ['error', 'unix'],
-    "no-use-before-define": "off",
+    'no-use-before-define': 'off',
     'newline-before-return': 'error',
     'no-console': 'warn',
     'no-continue': 'off',
