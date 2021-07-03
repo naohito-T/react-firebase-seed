@@ -40,6 +40,11 @@ CRAでは開発環境サーバはホットリロードが有効になってい�
 
 ## Lint Prettier設定
 
+書籍 booth typescript firebase参照
+こちらも参照
+[URL](https://zenn.dev/yhay81/articles/def73cf8a02864)
+
+
 ```bash
 $yarn add -D stylelint prettier
 
@@ -106,4 +111,12 @@ $yarn add -D husky@4 lint-staged
       "cd function/ && eslint --fix",
       "prettier --write ."
     ]
+```
+
+## sort-package.json
+
+・package.jsonのsortをしてくれるpackageをinstall
+
+```bash
+$yarn add -D sort-package-json
 ```
