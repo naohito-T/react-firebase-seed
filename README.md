@@ -37,3 +37,73 @@ CRAでは開発環境サーバはホットリロードが有効になってい�
 "incremental": true
 "exclude": ["node_modules", "build", "script", "functions"]
 ```
+
+## Lint Prettier設定
+
+```bash
+$yarn add -D stylelint prettier
+
+$yarn add -D eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-import eslint-plugin-jest
+
+$yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
+
+$yarn add -D stylelint-config-prettier stylelint-config-standard stylelint-order
+
+$yarn add -D stylelint-config-styled-components stylelint-processor-styled-components
+
+$yarn add -D prettier-stylelint
+
+$touch .eslintrc.js
+
+$touch .eslintignore
+
+$touch stylelint.config.js
+
+$vi .gitignore
+
+```
+
+## typesync install
+
+・package.jsonの中身を調べて、必要なTypeScriptの型ファイルがなければ自動でdevDependenciesに追加してくれる
+
+```bash
+$npm install -g typesync
+typesync後yarnを実行すれば自動で実行してくれる
+$typesync
+$yarn
+
+
+```
+
+## husky lint-staged setup
+lint-stagedとhuskyを使い、git commitのタイミングでeslintによるチェックを実施し、エラーだったらコミットさせない設定をする。
+husky@4 versio4でないと動かないためhusky ver4を導入
+
+```bash
+$yarn add -D husky@4 lint-staged
+
+```
+
+以下を追加
+
+```json
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix './src/**/*.{js,jsx,ts,tsx}'",
+      "prettier --write ."
+    ],
+    "src/**/*.{css,jsx,tsx}": [
+      "stylelint --fix",
+      "prettier --write ."
+    ],
+    "function/src/**/*.{js,ts}": [
+      "cd function/ && eslint --fix",
+      "prettier --write ."
+    ]
+```
