@@ -199,3 +199,43 @@ $firebase deploy
 デプロイ後、アプリを magazin-app-demo.web.app で表示します。
 
 
+## firebase cloud functionディレクトリセットアップ
+
+```bash
+$nodenv local 10.17.0
+
+package.jsonを10にする
+
+$yarn install
+
+```
+
+tsconfig設定変更
+
+## test環境構築
+
+```bash
+$yarn add -D jest ts-jest @types/jest
+```
+
+## lint setup
+
+```bash
+$yarn add -D eslint prettier
+$yarn add -D eslint-plugin-import eslint-plugin-jest eslint-plugin-prefer-arrow eslint-plugin-prettier eslint-config-prettier eslint-config-airbnb-base
+$yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
+$typesync
+$yarn
+```
+
+## firestore seed setup
+
+seedスクリプトはFirebaseのAdmin SDKを使うため、その認証のために秘密鍵が必要になる。
+
+Nodeでコマンドラインインターフェースを実現してくれるライブラリでCommander.jsが一番メジャー
+
+```bash
+$yarn add firebase commander csv-parse
+
+$yarn add -D @types/node
+```
