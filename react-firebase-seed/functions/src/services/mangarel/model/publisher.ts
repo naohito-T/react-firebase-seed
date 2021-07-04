@@ -8,4 +8,3 @@ export type Publisher = {
   createdAt: firestore.Timestamp | null;
   updatedAt: firestore.Timestamp | null;
 };
-

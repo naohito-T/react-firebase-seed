@@ -1,5 +1,6 @@
 # start up
 
+次やること。puppeteerをインストールする 10.18以上でfunction/配下
 ## node version
 
 nodeのversionは固定している。
